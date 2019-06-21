@@ -1,0 +1,16 @@
+version: 2
+
+jobs:
+  install_and_run:
+    docker:
+      - image: circleci/node
+    working_directory: ~/app/
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - run:
+          name: Run node program
+          command: yarn start
