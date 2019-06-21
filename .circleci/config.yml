@@ -14,3 +14,9 @@ jobs:
       - run:
           name: Run node program
           command: yarn start
+
+workflows:
+  version: 2
+  build-and-run:
+    jobs:
+    - install_and_run
